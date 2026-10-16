@@ -90,6 +90,7 @@ RaceDay/
 | API Documentation | Swagger / OpenAPI |
 | Testing | xUnit with In-Memory Database |
 | CI/CD | GitHub Actions |
+[![.NET](https://github.com/BraD1764/RaceDay/actions/workflows/dotnet.yml/badge.svg)](https://github.com/BraD1764/RaceDay/actions/workflows/dotnet.yml)
 
 ---
 
