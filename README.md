@@ -166,3 +166,13 @@ Containerization: Docker
 Testing: xUnit
 
 CI/CD: GitHub Actions
+
+ Setup Instructions
+Prerequisites
+Visual Studio 2022
+
+.NET 10.0 SDK
+
+Microsoft SQL Server
+
+Docker Desktop (for Part 3)
