@@ -1,0 +1,82 @@
+/* --- RaceDay Master Theme --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap');
+
+:root {
+    --primary: #ff5722; /* Energetic Orange */
+    --dark: #1a1a1a;
+    --light-bg: #f4f7f6;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light-bg);
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--dark) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    color: var(--primary) !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+    .nav-link:hover {
+        color: var(--primary) !important;
+    }
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #e64a19;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(255, 87, 34, 0.3);
+    }
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    }
+
+/* Status Badges */
+.badge-confirmed {
+    background-color: #198754;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.badge-pending {
+    background-color: #ffc107;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}

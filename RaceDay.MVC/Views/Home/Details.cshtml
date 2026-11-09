@@ -1,0 +1,21 @@
+@model RaceDay.MVC.Models.EventDto
+
+<div class="container mt-4">
+    <div class="card event-card">
+        <div class="card-body">
+            <h2 class="card-title">@Model.Title</h2>
+            <p class="text-muted">
+                📍 @Model.City, @Model.Province<br />
+                📅 @Model.StartDate.ToString("dd MMM yyyy")
+            </p>
+
+            @if (!string.IsNullOrWhiteSpace(Model.Description))
+            {
+                <p class="card-text">@Model.Description</p>
+            }
+
+            <p class="card-text">Event type: @Model.EventType</p>
+            <a asp-action="Index" class="btn btn-secondary">Back to events</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+services:
+  raceday.mvc:
+    image: ${DOCKER_REGISTRY-}racedaymvc
+    build:
+      context: .
+      dockerfile: RaceDay.MVC/Dockerfile
+    depends_on:
+      - raceday.api
+
+  raceday.api:
+    image: ${DOCKER_REGISTRY-}racedayapi
+    build:
+      context: .
+      dockerfile: RaceDay.API/Dockerfile

@@ -1,0 +1,70 @@
+﻿@model RaceDay.MVC.Models.EventDto
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-dark text-white">
+                    <h4 class="mb-0">Create New Event</h4>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger">@ViewBag.Error</div>
+                    }
+
+                    <form asp-action="Create" method="post">
+                        <div class="mb-3">
+                            <label class="fw-bold">Event Title</label>
+                            <input asp-for="Title" class="form-control" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="fw-bold">Description</label>
+                            <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">Start Date</label>
+                                <input asp-for="StartDate" type="datetime-local" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">End Date</label>
+                                <input asp-for="EndDate" type="datetime-local" class="form-control" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">City</label>
+                                <input asp-for="City" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">Province</label>
+                                <input asp-for="Province" class="form-control" required />
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="fw-bold">Location</label>
+                            <input asp-for="Location" class="form-control" required />
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">Event Type</label>
+                                <select asp-for="EventType" class="form-control">
+                                    <option value="Running">Running</option>
+                                    <option value="Walking">Walking</option>
+                                    <option value="Cycling">Cycling</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="fw-bold">Max Participants</label>
+                                <input asp-for="MaxParticipants" type="number" class="form-control" required />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 mt-3">Create Event</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

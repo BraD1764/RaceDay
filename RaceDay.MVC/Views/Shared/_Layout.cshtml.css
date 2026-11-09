@@ -1,0 +1,36 @@
+﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+<ul class="navbar-nav flex-grow-1" >
+@ {
+    // Get the session role (you will need to set this in your Login Controller) var userRole = Context.Session.GetString("UserRole");
+}
+
+@if (TempData["SuccessMessage"] != null) {
+    <div class="alert alert-success alert-dismissible fade show m-3" role="alert"> @TempData["SuccessMessage"] <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>
+}
+
+@if (TempData["ErrorMessage"] != null) {
+    <div class="alert alert-danger alert-dismissible fade show m-3" role="alert"> @TempData["ErrorMessage"] <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> </div>
+}
+
+@if (userRole == "Organiser") {
+    <li class="nav-item"> <a class="nav-link" asp-controller="Dashboard" asp-action="Organiser">Organiser Dashboard</a> </li> <li class="nav-item"> <a class="nav-link" asp-controller="Events" asp-action="Index">Manage Events</a> </li>
+}
+
+else if (userRole == "Participant") {
+    <li class="nav-item"> <a class="nav-link" asp-controller="Events" asp-action="Browse">Browse Events</a> </li> <li class="nav-item"> <a class="nav-link" asp-controller="Enrolments" asp-action="MyEnrolments">My Enrolments</a> </li> <li class="nav-item"> <a class="nav-link" asp-controller="Results" asp-action="MyResults">My Results</a> </li>
+}
+
+</ul >
+<!-- Login / Logout Section -->
+<ul class="navbar-nav" >
+@if (string.IsNullOrEmpty(userRole)) {
+    <li class="nav-item"> <a class="nav-link" asp-controller="Account" asp-action="Login">Login / Register</a> </li>
+}
+
+else {
+    <li class="nav-item"> <span class="nav-link text-light">Logged in as: @Context.Session.GetString("UserName")</span> </li> <li class="nav-item"> <a class="nav-link" asp-controller="Account" asp-action="Logout">Logout</a> </li>
+}
+
+</ul >

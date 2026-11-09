@@ -123,14 +123,11 @@ public partial class Program
         // Configure Pipeline
        
 
-        // Seed database
-        using (var scope = app.Services.CreateScope())
-        {
-            var dbContext = scope.ServiceProvider.GetRequiredService<RaceDayDbContext>();
-            {
-
-}dbContext.Database.EnsureCreated();
-        }
+        // Do not connect to SQL Server during application startup. A synchronous
+        // EnsureCreated call here prevents Kestrel from listening when SQL Server
+        // is stopped or the connection string is unavailable.
+        // Apply the EF Core migrations separately with:
+        // dotnet ef database update --project RaceDay.Infrastructure --startup-project RaceDay.API
 
         // Swagger - enable in all environments easy testing
         app.UseSwagger();

@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <div class="card shadow">
+            <div class="card-body">
+                <h3 class="text-center mb-4">RaceDay Register</h3>
+                @if (ViewBag.Error != null) { <div class="alert alert-danger">@ViewBag.Error</div> }
+                
+                <form asp-action="Register" method="post">
+                    <div class="mb-3">
+                        <label>First Name</label>
+                        <input type="text" name="FirstName" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Last Name</label>
+                        <input type="text" name="LastName" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" name="Email" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" name="Password" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label>I am a:</label>
+                        <select name="Role" class="form-control">
+                            <option value="Participant">Participant</option>
+                            <option value="Organiser">Organiser</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                </form>
+                <div class="text-center mt-3">
+                    <a asp-action="Login">Already have an account? Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

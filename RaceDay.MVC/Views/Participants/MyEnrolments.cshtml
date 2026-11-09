@@ -1,0 +1,44 @@
+﻿@model IEnumerable<RaceDay.MVC.Models.EnrolmentDto>
+
+<div class="container mt-5">
+    <h2 class="fw-bold mb-4" style="border-left: 5px solid #ff5722; padding-left: 15px;">My Enrolments</h2>
+
+    <div class="card p-4">
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info">You haven't enrolled in any events yet! Go to "Browse Events" to join one.</div>
+        }
+        else
+        {
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Event</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="fw-bold">@item.EventTitle</td>
+                            <td>@item.CategoryName</td>
+                            <td>
+                                @if (item.Status == "Confirmed")
+                                {
+                                    <span class="badge-confirmed">Confirmed</span>
+                                }
+                                else
+                                {
+
+                                    <span class="badge-pending">@item.Status</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

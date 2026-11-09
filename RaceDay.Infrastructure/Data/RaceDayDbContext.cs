@@ -60,6 +60,9 @@ namespace RaceDay.Infrastructure.Data
             // Category configuration
             modelBuilder.Entity<Category>(entity =>
             {
+                entity.Property(c => c.Distance).HasPrecision(18, 2);
+                entity.Property(c => c.EntryFee).HasPrecision(18, 2);
+
                 entity.HasOne(c => c.Event)
                     .WithMany(e => e.Categories)
                     .HasForeignKey(c => c.EventID)
@@ -96,6 +99,10 @@ namespace RaceDay.Infrastructure.Data
             // Weather configuration
             modelBuilder.Entity<Weather>(entity =>
             {
+                entity.Property(w => w.Temperature).HasPrecision(18, 2);
+                entity.Property(w => w.Humidity).HasPrecision(18, 2);
+                entity.Property(w => w.WindSpeed).HasPrecision(18, 2);
+
                 entity.HasOne(w => w.Event)
                     .WithMany(e => e.WeatherRecords)
                     .HasForeignKey(w => w.EventID)
