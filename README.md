@@ -176,3 +176,5 @@ Visual Studio 2022
 Microsoft SQL Server
 
 Docker Desktop (for Part 3)
+
+part 3 youtube link https://youtu.be/wai1-ugSNZ8
