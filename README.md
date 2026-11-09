@@ -102,3 +102,48 @@ RaceDay/
 - .NET 10.0 SDK
 - Microsoft SQL Server (or SQL Server Express / LocalDB)
 - Git
+
+#  RaceDay - Event Management System
+
+A full-stack web-based event management system designed for the South African road running, walking, and cycling community.
+
+##  Project Overview
+
+**RaceDay** is a platform that allows Event Organisers to create and manage events, categories, and participant results, while Participants can browse upcoming events, enter events, track their personal performance history, and prepare for race day using live weather information.
+
+This project was built progressively across three parts:
+
+| Part | Description | Status |
+|------|-------------|--------|
+| **Part 1** | System Planning and Database | ✅ Complete |
+| **Part 2** | RESTful API Development | ✅ Complete |
+| **Part 3** | MVC Web Application, Azure & Docker | ✅ Complete |
+
+---
+
+## 👥 User Roles
+
+### 🏢 Organiser
+- Create, edit, and delete events.
+- Upload event banner images (Azure Blob Storage).
+- Manage event categories.
+- Capture participant results.
+
+### 🏃 Participant
+- Browse upcoming events.
+- Enrol in events by selecting categories.
+- View personal enrolments and race results.
+
+---
+
+## 🏗️ Project Structure
+
+```text
+RaceDay/
+├── docs/                  # Part 1 Documentation (ERD, API Plan, SQL)
+├── RaceDay.API/           # Part 2 API (ASP.NET Core Web API)
+├── RaceDay.Core/          # Entities and DTOs
+├── RaceDay.Infrastructure/# DbContext and Services
+├── RaceDay.Tests/         # Unit Tests (xUnit)
+├── RaceDay.MVC/           # Part 3 Frontend (ASP.NET Core MVC)
+└── Dockerfile             # Docker configuration for the MVC app
