@@ -115,28 +115,28 @@ This project was built progressively across three parts:
 
 | Part | Description | Status |
 |------|-------------|--------|
-| **Part 1** | System Planning and Database | ✅ Complete |
-| **Part 2** | RESTful API Development | ✅ Complete |
-| **Part 3** | MVC Web Application, Azure & Docker | ✅ Complete |
+| **Part 1** | System Planning and Database |  Complete |
+| **Part 2** | RESTful API Development |  Complete |
+| **Part 3** | MVC Web Application, Azure & Docker |  Complete |
 
 ---
 
-## 👥 User Roles
+##  User Roles
 
-### 🏢 Organiser
+###  Organiser
 - Create, edit, and delete events.
 - Upload event banner images (Azure Blob Storage).
 - Manage event categories.
 - Capture participant results.
 
-### 🏃 Participant
+###  Participant
 - Browse upcoming events.
 - Enrol in events by selecting categories.
 - View personal enrolments and race results.
 
 ---
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```text
 RaceDay/
@@ -147,3 +147,22 @@ RaceDay/
 ├── RaceDay.Tests/         # Unit Tests (xUnit)
 ├── RaceDay.MVC/           # Part 3 Frontend (ASP.NET Core MVC)
 └── Dockerfile             # Docker configuration for the MVC app
+
+ Technologies Used
+Backend: ASP.NET Core 8.0 Web API (C#)
+
+Frontend: ASP.NET Core MVC
+
+Database: Microsoft SQL Server
+
+ORM: Entity Framework Core
+
+Authentication: JWT Tokens & Session Management
+
+Cloud Storage: Azure Blob Storage
+
+Containerization: Docker
+
+Testing: xUnit
+
+CI/CD: GitHub Actions
